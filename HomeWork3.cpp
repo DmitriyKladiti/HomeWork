@@ -41,8 +41,9 @@ int main()
 
 	repit = 0;
 	counterLast = 1;
+	std::uint8_t MaxIntDigitSize{ 10 };
 
-	while (10 != repit)
+	while (MaxIntDigitSize != repit)
 	{
 		if (0 < number / counterLast)
 		{
@@ -63,10 +64,9 @@ int main()
 	counterLast = 1;
 	int counterDigit = 0;
 
-	// ERROR: 10 - magic number
-	// Решение: помести эту переменную в consexpr std::uint8_t MAX_INT_DIGIT_SIZE { 10 };
-	while (10 != repit) 
+	while (MaxIntDigitSize != repit) 
 	{
+		
 		if (0 < number / counterLast) 
 		{
 			++counterDigit;
@@ -88,9 +88,8 @@ int main()
 	counterLast = 1;
 	int oodDigit = 0;
 	int oodTest;
-	
-	// ERROR: 10 - magic number
-	while (10 != repit) 
+
+	while (MaxIntDigitSize != repit) 
 	{
 		oodTest = number / counterLast % 10;
 		if (1 == oodTest % 2) 
@@ -114,20 +113,15 @@ int main()
 	counterLast = 1;
 	int evenDigit = 1;
 	int evenMult;
-        
-	// ERROR: 10 - magic number
-	while (10 != repit) 
+
+	while (MaxIntDigitSize != repit) 
 	{
 		evenMult = number / counterLast % 10;
-		if (0 == evenMult % 2) 
+		if (0 == evenMult % 2 && 0 != evenMult) 
 		{
-			if (evenMult != 0) // ERROR: йода нотация
-			{ // ERROR: code complexity - можно evenMult != 0 и 0 == evenMult % 2 объединить в одно условие
-		       evenDigit *= evenMult; // ERROR: отсупы поехали
-			}
-		
+			evenDigit *= evenMult;
 		}
-
+		
 		counterLast *= 10;
 		++repit;
 	}
