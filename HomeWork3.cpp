@@ -63,6 +63,8 @@ int main()
 	counterLast = 1;
 	int counterDigit = 0;
 
+	// ERROR: 10 - magic number
+	// Решение: помести эту переменную в consexpr std::uint8_t MAX_INT_DIGIT_SIZE { 10 };
 	while (10 != repit) 
 	{
 		if (0 < number / counterLast) 
@@ -86,7 +88,8 @@ int main()
 	counterLast = 1;
 	int oodDigit = 0;
 	int oodTest;
-
+	
+	// ERROR: 10 - magic number
 	while (10 != repit) 
 	{
 		oodTest = number / counterLast % 10;
@@ -111,15 +114,16 @@ int main()
 	counterLast = 1;
 	int evenDigit = 1;
 	int evenMult;
-
+        
+	// ERROR: 10 - magic number
 	while (10 != repit) 
 	{
 		evenMult = number / counterLast % 10;
 		if (0 == evenMult % 2) 
 		{
-			if (evenMult != 0) 
-			{
-		       evenDigit *= evenMult;
+			if (evenMult != 0) // ERROR: йода нотация
+			{ // ERROR: code complexity - можно evenMult != 0 и 0 == evenMult % 2 объединить в одно условие
+		       evenDigit *= evenMult; // ERROR: отсупы поехали
 			}
 		
 		}
