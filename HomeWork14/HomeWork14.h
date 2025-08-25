@@ -16,10 +16,6 @@ public:
 		this->y = y;
 	}
 
-public:
-	
-	void showPoint();
-
 };
 class PointTri : public Point // Задание 13.2
 {
